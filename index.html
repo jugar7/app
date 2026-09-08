@@ -6,7 +6,7 @@
     <title>1Win Latam Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -26,6 +26,22 @@
             min-height: 100vh;
         }
 
+        /* Подсказка для TikTok браузера */
+        .tiktok-browser-tip {
+            background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            padding: 10px 15px;
+            font-size: 0.62rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
+            border-bottom: 2px solid #ffaa00;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .tiktok-browser-tip strong {
+            color: #ffaa00;
+        }
+
         body::after {
             content: '';
             position: fixed;
@@ -33,7 +49,7 @@
             right: -150px;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, rgba(10, 15, 30, 0.3) 50%, rgba(6, 9, 19, 0) 75%);
+            background: radial-gradient(circle, rgba(43, 30, 110, 0.5) 0%, rgba(10, 15, 30, 0.3) 50%, rgba(6, 9, 19, 0) 75%);
             z-index: -1;
             pointer-events: none;
         }
@@ -47,8 +63,8 @@
             padding: 8px 0;
             white-space: nowrap;
             position: relative;
-            margin-top: 10px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.7), 0 0 15px rgba(124, 58, 237, 0.2);
+            margin-top: 5px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
         }
 
         .ticker-track {
@@ -69,6 +85,8 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.65rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.08);
             text-decoration: none;
@@ -83,7 +101,8 @@
 
         .ticker-win {
             color: #ffaa00;
-            font-weight: 900;
+            font-weight: 800;
+            text-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
         }
 
         @keyframes marquee {
@@ -95,18 +114,19 @@
         .promo-banner {
             position: relative;
             background: #111827;
-            border: 1px solid rgba(255, 170, 0, 0.25);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(124, 58, 237, 0.15);
-            border-radius: 14px;
-            margin: 14px auto;
-            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            margin: 12px auto;
+            padding: 14px 14px;
             max-width: 340px;
             text-align: center;
         }
 
         .promo-title {
-            font-size: 0.75rem;
-            font-weight: 900;
+            font-size: 0.72rem;
+            font-weight: 800;
+            font-family: 'Unbounded', cursive;
             color: #ffffff;
             margin-bottom: 4px;
             line-height: 1.2;
@@ -119,6 +139,8 @@
 
         .promo-subtitle {
             font-size: 0.58rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
             color: #94a3b8;
             margin-bottom: 8px;
         }
@@ -130,11 +152,12 @@
             padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.9rem;
+            font-family: 'Unbounded', cursive;
             font-weight: 900;
             color: #ffaa00;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 0 12px rgba(255, 170, 0, 0.2);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
         }
 
         .promo-box:hover {
@@ -144,6 +167,8 @@
 
         .copy-hint {
             font-size: 0.58rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
             color: #ffcc00;
             margin-top: 4px;
         }
@@ -178,8 +203,10 @@
 
         .section-title {
             font-size: 0.95rem;
-            font-weight: 900;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             color: #ffffff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.2);
         }
 
         .header-more-btn {
@@ -188,6 +215,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 6px 10px;
             border-radius: 8px;
+            font-family: 'Unbounded', cursive;
             font-size: 0.55rem;
             font-weight: 700;
             text-decoration: none;
@@ -245,7 +273,7 @@
             position: relative;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
 
         .game-card img {
@@ -263,17 +291,18 @@
             background: #ff007a;
             color: #ffffff;
             font-size: 0.52rem;
-            font-weight: 900;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             padding: 3px 6px;
             border-radius: 4px;
             z-index: 2;
-            box-shadow: 0 0 10px rgba(255, 0, 122, 0.7);
+            box-shadow: 0 0 12px rgba(255, 0, 122, 0.8);
         }
 
         .game-wrapper:hover .game-card,
         .game-wrapper.active .game-card {
             border-color: #ffaa00;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.4);
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.5);
         }
 
         .game-wrapper:hover .game-card img,
@@ -309,24 +338,27 @@
             width: 100%;
             padding: 7px 2px;
             border-radius: 8px;
-            font-weight: 900;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             font-size: 0.52rem;
             text-align: center;
             text-decoration: none;
             color: #ffffff;
             border: none;
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
             line-height: 1.1;
         }
 
         .action-btn.apk {
             background: linear-gradient(135deg, #00bfff 0%, #0077ff 100%);
+            box-shadow: 0 0 10px rgba(0,191,255,0.4);
         }
 
         .action-btn.play {
             background: linear-gradient(135deg, #ffaa00 0%, #cc8400 100%);
             color: #060913;
+            box-shadow: 0 0 10px rgba(255,170,0,0.4);
         }
 
         .game-info {
@@ -342,11 +374,12 @@
             height: 6px;
             background-color: #00cc66;
             border-radius: 50%;
-            box-shadow: 0 0 6px #00cc66;
+            box-shadow: 0 0 8px #00cc66;
         }
 
         .online-count {
             font-size: 0.62rem;
+            font-family: 'Unbounded', cursive;
             font-weight: 700;
             color: #94a3b8;
         }
@@ -366,7 +399,7 @@
             text-align: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
 
         .more-games-card:hover {
@@ -389,131 +422,113 @@
 
         .more-games-text {
             font-size: 0.62rem;
-            font-weight: 900;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             color: #cbd5e1;
             line-height: 1.3;
         }
 
-        /* КРУГЛАЯ РУЛЕТКА (BLACK, GOLD, PURPLE, УКАЗАТЕЛЬ СВЕРХУ, КНОПКА ПОСЕРЕДИНЕ) */
-        .wheel-section {
+        /* БЛОК ПЛАТЕЖНЫХ СИСТЕМ */
+        .payments-section {
             margin: 35px auto 15px auto;
-            max-width: 380px;
+            max-width: 360px;
             padding: 0 16px;
             text-align: center;
         }
 
-        .wheel-container-card {
+        .payments-container-card {
             background: #111827;
-            border: 1px solid rgba(255, 170, 0, 0.35);
-            border-radius: 20px;
-            padding: 22px 15px;
+            border: 1px solid rgba(255, 170, 0, 0.3);
+            border-radius: 16px;
+            padding: 20px 15px;
             position: relative;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 170, 0, 0.05);
         }
 
-        .wheel-title {
-            font-size: 0.9rem;
-            font-weight: 900;
+        .payments-title {
+            font-size: 0.85rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             color: #ffffff;
             margin-bottom: 5px;
-            text-shadow: 0 0 12px rgba(255,255,255,0.25);
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
         }
 
-        .wheel-subtitle {
-            font-size: 0.62rem;
-            color: #94a3b8;
-            margin-bottom: 12px;
-        }
-
-        .attempts-counter {
-            font-size: 0.68rem;
-            color: #ffaa00;
-            font-weight: 900;
-            margin-bottom: 14px;
-            background: rgba(255, 170, 0, 0.1);
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 170, 0, 0.3);
-            box-shadow: 0 0 12px rgba(255, 170, 0, 0.15);
-        }
-
-        /* Холст колеса и центральная кнопка GIRAR */
-        .wheel-wrapper {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto 15px auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-        }
-
-        /* Верхний указатель-стрелка */
-        .wheel-pointer {
-            position: absolute;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 18px solid #ffcc00;
-            z-index: 30;
-            filter: drop-shadow(0 0 8px #ffaa00);
-        }
-
-        canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        /* Большая кнопка GIRAR посередине колеса */
-        .center-spin-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
-            color: #060913;
-            border: 4px solid #060913;
-            border-radius: 50%;
+        .payments-subtitle {
+            font-size: 0.58rem;
             font-family: 'Unbounded', cursive;
-            font-size: 0.72rem;
-            font-weight: 900;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.6);
-            z-index: 20;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .payments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .pay-card {
+            background: #060913;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 8px 4px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: transform 0.1s ease, filter 0.2s;
+            gap: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .center-spin-btn:hover {
-            filter: brightness(1.1);
-            transform: translate(-50%, -50%) scale(1.05);
+        .pay-card:hover {
+            border-color: #ffaa00;
+            transform: translateY(-2px);
         }
 
-        .center-spin-btn:active {
-            transform: translate(-50%, -50%) scale(0.95);
+        .pay-flag {
+            font-size: 1.1rem;
+            line-height: 1;
         }
 
-        .center-spin-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            filter: grayscale(0.5);
+        .pay-name {
+            font-size: 0.55rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
+            color: #e2e8f0;
+            text-align: center;
         }
 
-        .wheel-result {
-            margin-top: 10px;
-            font-size: 0.72rem;
+        .pay-country {
+            font-size: 0.45rem;
+            font-family: 'Unbounded', cursive;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        .recoger-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
+            color: #060913;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            font-family: 'Unbounded', cursive;
             font-weight: 900;
-            color: #ffaa00;
-            min-height: 24px;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.4);
+            font-size: 0.75rem;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        .recoger-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 170, 0, 0.9);
         }
 
         .toast {
@@ -529,10 +544,11 @@
             transform: translateX(-50%);
             z-index: 1000;
             font-size: 0.75rem;
-            font-weight: 900;
+            font-family: 'Unbounded', cursive;
+            font-weight: 800;
             opacity: 0;
             transition: opacity 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.6);
         }
 
         .toast.show {
@@ -543,46 +559,46 @@
 </head>
 <body>
 
+    <!-- Подсказка для TikTok браузера -->
+    <div class="tiktok-browser-tip">
+        ⚠️ Toca los <strong>tres puntos (...)</strong> arriba a la derecha y abre en el navegador externo (Safari / Chrome) para jugar sin interrupciones.
+    </div>
+
     <!-- Динамическая лента последних выигрышей -->
     <div class="winners-ticker">
         <div class="ticker-track">
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item ext-link">
                 <span>🇲🇽 Mateo R.</span>
                 <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bbd75fc6-bae5-4f3c-a2bc-b705e9704ca3_vertical.png@avif" alt="game">
                 <span class="ticker-win">+12,500 MXN</span>
             </a>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item ext-link">
                 <span>🇨🇴 Valentina G.</span>
                 <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/6dacc373-3855-4c57-b91c-ed4569066a6a_vertical.png@avif" alt="game">
                 <span class="ticker-win">+350,000 COP</span>
             </a>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item ext-link">
                 <span>🇻🇪 Alejandro S.</span>
                 <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/1932ae9f-2a22-4336-8280-3c8eee4eb897_vertical.png@avif" alt="game">
                 <span class="ticker-win">+2,800 Bs.</span>
             </a>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item ext-link">
                 <span>🇦🇷 Lucia P.</span>
                 <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/b36cfc15-ad88-49bc-a6e6-ad3db24e369b_vertical.png@avif" alt="game">
                 <span class="ticker-win">+85,000 ARS</span>
             </a>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item ext-link">
                 <span>🇨🇱 Carlos M.</span>
                 <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bb8b5afb-3975-47b3-b121-73cc33f9f9f0_vertical.png@avif" alt="game">
                 <span class="ticker-win">+45,000 CLP</span>
-            </a>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="ticker-item">
-                <span>🇲🇽 Mateo R.</span>
-                <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bbd75fc6-bae5-4f3c-a2bc-b705e9704ca3_vertical.png@avif" alt="game">
-                <span class="ticker-win">+12,500 MXN</span>
             </a>
         </div>
     </div>
 
     <!-- Промо-блок -->
     <div class="promo-banner">
-        <div class="promo-title">¡BONO <span class="promo-highlight">+500%</span> y <span class="promo-highlight">100 USDT</span>!</div>
-        <div class="promo-subtitle">Obtén un bono con el código promocional</div>
+        <div class="promo-title">¡BONO <span class="promo-highlight">+500%</span> en el primer depósito!</div>
+        <div class="promo-subtitle">Usa el código promocional exclusivo</div>
         
         <div class="promo-box" id="promoCodeBtn" onclick="copyPromoCode()">
             500PHP
@@ -597,7 +613,7 @@
                 <div class="vertical-line"></div>
                 <div class="section-title">Mejores Juegos</div>
             </div>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="header-more-btn">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="header-more-btn ext-link">
                 <div class="header-grid-icon"><span></span><span></span><span></span><span></span></div>
                 Ver más juegos
             </a>
@@ -608,8 +624,8 @@
                     <div class="badge-hot">HOT</div>
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bbd75fc6-bae5-4f3c-a2bc-b705e9704ca3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.2K jugadores</div></div>
@@ -618,8 +634,8 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/6dacc373-3855-4c57-b91c-ed4569066a6a_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">853 jugadores</div></div>
@@ -628,8 +644,8 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/1932ae9f-2a22-4336-8280-3c8eee4eb897_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">423 jugadores</div></div>
@@ -638,14 +654,14 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/b36cfc15-ad88-49bc-a6e6-ad3db24e369b_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.5K jugadores</div></div>
             </div>
             <div class="game-wrapper">
-                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="more-games-card">
+                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="more-games-card ext-link">
                     <div class="grid-icon"><span></span><span></span><span></span><span></span></div>
                     <div class="more-games-text">Ver más juegos 100+</div>
                 </a>
@@ -653,35 +669,37 @@
         </div>
     </div>
 
-    <!-- Секция: Populares -->
+    <!-- Секция: Populares (с Cheese Road) -->
     <div class="section">
         <div class="section-header">
             <div class="section-title-wrapper">
                 <div class="vertical-line"></div>
                 <div class="section-title">Populares</div>
             </div>
-            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="header-more-btn">
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="header-more-btn ext-link">
                 <div class="header-grid-icon"><span></span><span></span><span></span><span></span></div>
                 Ver más juegos
             </a>
         </div>
         <div class="games-scroll">
+            <!-- Cheese Road -->
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
-                    <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bb8b5afb-3975-47b3-b121-73cc33f9f9f0_vertical.png@avif" alt="Game">
+                    <div class="badge-hot">NEW</div>
+                    <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bb8b5afb-3975-47b3-b121-73cc33f9f9f0_vertical.png@avif" alt="Cheese Road">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
-                <div class="game-info"><div class="online-dot"></div><div class="online-count">912 jugadores</div></div>
+                <div class="game-info"><div class="online-dot"></div><div class="online-count">Cheese Road</div></div>
             </div>
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/12d38e44-d636-4c58-8027-1e48e13969cc_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">674 jugadores</div></div>
@@ -690,14 +708,14 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/7b0979b3-cde1-46f0-b2db-d1208c833ea3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">2.1K jugadores</div></div>
             </div>
             <div class="game-wrapper">
-                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="more-games-card">
+                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="more-games-card ext-link">
                     <div class="grid-icon"><span></span><span></span><span></span><span></span></div>
                     <div class="more-games-text">Ver más juegos 100+</div>
                 </a>
@@ -705,20 +723,76 @@
         </div>
     </div>
 
-    <!-- КРУГЛАЯ РУЛЕТКА -->
-    <div class="wheel-section">
-        <div class="wheel-container-card">
-            <div class="wheel-title">Ruleta Double Bonus</div>
-            <div class="wheel-subtitle">¡Gira la ruleta y desbloquea tus premios!</div>
-            <div class="attempts-counter" id="attemptsCounter">Intentos disponibles: 2</div>
+    <!-- МОМЕНТАЛЬНЫЙ ВЫВОД СРЕДСТВ -->
+    <div class="payments-section">
+        <div class="payments-container-card">
+            <div class="payments-title">Retirada instantánea de fondos</div>
+            <div class="payments-subtitle">Métodos de pago locales seguros y rápidos para toda Latinoamérica</div>
             
-            <div class="wheel-wrapper">
-                <div class="wheel-pointer"></div>
-                <canvas id="wheelCanvas" width="500" height="500"></canvas>
-                <button class="center-spin-btn" id="centerSpinBtn" onclick="spinWheel()">GIRAR</button>
+            <div class="payments-grid">
+                <div class="pay-card">
+                    <div class="pay-flag">🇲🇽</div>
+                    <div class="pay-name">SPEI</div>
+                    <div class="pay-country">México</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇲🇽</div>
+                    <div class="pay-name">OXXO</div>
+                    <div class="pay-country">México</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇨🇴</div>
+                    <div class="pay-name">Nequi</div>
+                    <div class="pay-country">Colombia</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇨🇴</div>
+                    <div class="pay-name">Bancolombia</div>
+                    <div class="pay-country">Colombia</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇻🇪</div>
+                    <div class="pay-name">Pago Móvil</div>
+                    <div class="pay-country">Venezuela</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇻🇪</div>
+                    <div class="pay-name">Banesco</div>
+                    <div class="pay-country">Venezuela</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇨🇱</div>
+                    <div class="pay-name">WebPay</div>
+                    <div class="pay-country">Chile</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇨🇱</div>
+                    <div class="pay-name">Banco Estado</div>
+                    <div class="pay-country">Chile</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇦🇷</div>
+                    <div class="pay-name">Mercado Pago</div>
+                    <div class="pay-country">Argentina</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇵🇪</div>
+                    <div class="pay-name">PagoEfectivo</div>
+                    <div class="pay-country">Perú</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🇧🇷</div>
+                    <div class="pay-name">Pix</div>
+                    <div class="pay-country">Brasil</div>
+                </div>
+                <div class="pay-card">
+                    <div class="pay-flag">🪙</div>
+                    <div class="pay-name">USDT / BTC</div>
+                    <div class="pay-country">Global</div>
+                </div>
             </div>
 
-            <div class="wheel-result" id="wheelResultText"></div>
+            <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="recoger-btn ext-link">RECOGER BONO</a>
         </div>
     </div>
 
@@ -767,207 +841,25 @@
             }, 2000);
         }
 
-        /* ЗВУКОВОЙ СИНТЕЗАТОР (Web Audio API) */
-        let audioCtx = null;
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            }
-        }
-
-        function playTickSound() {
-            try {
-                initAudio();
-                if (!audioCtx) return;
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.05);
-                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.05);
-            } catch (e) {}
-        }
-
-        function playWinSound() {
-            try {
-                initAudio();
-                if (!audioCtx) return;
-                const now = audioCtx.currentTime;
-                const notes = [440, 554, 659, 880];
-                notes.forEach((freq, idx) => {
-                    const osc = audioCtx.createOscillator();
-                    const gain = audioCtx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(freq, now + idx * 0.1);
-                    gain.gain.setValueAtTime(0.2, now + idx * 0.1);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.3);
-                    osc.connect(gain);
-                    gain.connect(audioCtx.destination);
-                    osc.start(now + idx * 0.1);
-                    osc.stop(now + idx * 0.1 + 0.3);
-                });
-            } catch (e) {}
-        }
-
-        /* НАСТРОЙКА КРУГЛОЙ РУЛЕТКИ */
-        const sectors = [
-            { label: ["500%"], color: "#ffcc00", textColor: "#060913" },   // Золотой
-            { label: ["20", "USDT"], color: "#111111", textColor: "#ffffff" }, // Черный
-            { label: ["100", "USDT"], color: "#7c3aed", textColor: "#ffffff" },// Фиолетовый
-            { label: ["50", "USDT"], color: "#111111", textColor: "#ffffff" },  // Черный
-            { label: ["200%"], color: "#ffcc00", textColor: "#060913" },       // Золотой
-            { label: ["10", "FS"], color: "#7c3aed", textColor: "#ffffff" },   // Фиолетовый
-            { label: ["50", "FS"], color: "#111111", textColor: "#ffffff" },   // Черный
-            { label: ["250", "FS"], color: "#7c3aed", textColor: "#ffffff" }   // Фиолетовый
-        ];
-
-        const canvas = document.getElementById("wheelCanvas");
-        const ctx = canvas.getContext("2d");
-        const totalSectors = sectors.length;
-        const arcSize = (2 * Math.PI) / totalSectors;
-
-        let currentAngle = 0; // Текущий угол поворота колеса
-        let isSpinning = false;
-        let attempts = 2;
-
-        function drawWheel() {
-            const width = canvas.width;
-            const height = canvas.height;
-            const radius = width / 2;
-
-            ctx.clearRect(0, 0, width, height);
-
-            ctx.save();
-            ctx.translate(radius, radius);
-            ctx.rotate(currentAngle);
-
-            for (let i = 0; i < totalSectors; i++) {
-                const angle = i * arcSize;
-
-                // Сектор колеса
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.arc(0, 0, radius - 10, angle, angle + arcSize);
-                ctx.closePath();
-                ctx.fillStyle = sectors[i].color;
-                ctx.fill();
-
-                // Граница сектора
-                ctx.lineWidth = 3;
-                ctx.strokeStyle = "#060913";
-                ctx.stroke();
-
-                // Рисуем текст ВДОЛЬ делений (радиально)
-                ctx.save();
-                ctx.rotate(angle + arcSize / 2);
-                ctx.textAlign = "right";
-                ctx.textBaseline = "middle";
-                ctx.fillStyle = sectors[i].textColor;
-                ctx.font = "900 22px 'Unbounded', cursive";
-
-                const lines = sectors[i].label;
-                const distance = radius - 75; // Отступ от центра
-
-                if (lines.length === 1) {
-                    ctx.fillText(lines[0], distance, 0);
-                } else {
-                    // Многострочный текст вдоль деления (USDT / FS на второй строчке)
-                    ctx.fillText(lines[0], distance, -10);
-                    ctx.font = "900 18px 'Unbounded', cursive";
-                    ctx.fillText(lines[1], distance, 12);
-                }
-
-                ctx.restore();
-            }
-
-            ctx.restore();
-
-            // Внутреннее золотое кольцо
-            ctx.beginPath();
-            ctx.arc(radius, radius, 48, 0, 2 * Math.PI);
-            ctx.fillStyle = "#060913";
-            ctx.fill();
-            ctx.lineWidth = 4;
-            ctx.strokeStyle = "#ffcc00";
-            ctx.stroke();
-        }
-
-        drawWheel();
-
-        function spinWheel() {
-            if (isSpinning || attempts <= 0) return;
-            isSpinning = true;
-
-            const resultText = document.getElementById("wheelResultText");
-            const spinBtn = document.getElementById("centerSpinBtn");
-            const counter = document.getElementById("attemptsCounter");
-
-            spinBtn.disabled = true;
-            resultText.innerText = "¡Girando ruleta...";
-
-            // 1-я попытка выбивает 500% (индекс 0), 2-я попытка выбивает 100 USDT (индекс 2)
-            let targetIndex = (attempts === 2) ? 0 : 2;
-
-            // Вычисляем угол так, чтобы нужный сектор точно остановился под верхним указателем (углом -Math.PI / 2)
-            const extraSpins = 6; // Полных оборотов
-            const targetSectorAngle = targetIndex * arcSize + arcSize / 2;
-            const targetAngle = 3 * Math.PI / 2 - targetSectorAngle; // Указатель строго сверху (-90 градусов)
-            const totalRotation = extraSpins * 2 * Math.PI + targetAngle - (currentAngle % (2 * Math.PI));
-
-            const startAngle = currentAngle;
-            const startTime = performance.now();
-            const duration = 3500; // 3.5 секунды вращения
-
-            let lastTickSector = -1;
-
-            function animateSpin(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                // Плавное замедление (cubic-bezier ease-out)
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                currentAngle = startAngle + totalRotation * easeOut;
-
-                drawWheel();
-
-                // Проверяем прохождение секторов для тикающего звука
-                let normalizedAngle = (2 * Math.PI - (currentAngle % (2 * Math.PI))) % (2 * Math.PI);
-                let currentSector = Math.floor(normalizedAngle / arcSize) % totalSectors;
-                if (currentSector !== lastTickSector) {
-                    playTickSound();
-                    lastTickSector = currentSector;
-                }
-
-                if (progress < 1) {
-                    requestAnimationFrame(animateSpin);
-                } else {
-                    isSpinning = false;
-                    attempts--;
-                    counter.innerText = `Intentos disponibles: ${attempts}`;
-                    playWinSound();
-
-                    if (attempts === 1) {
-                        resultText.innerHTML = "¡Ganaste <span style='color:#ffaa00;'>+500%</span>! ¡Te queda 1 intento! 🎉";
-                        spinBtn.disabled = false;
-                        spinBtn.innerText = "GIRAR";
-                    } else {
-                        resultText.innerHTML = "¡Felicidades! Ganaste <span style='color:#7c3aed;'>100 USDT</span> 🚀";
-                        spinBtn.disabled = false;
-                        spinBtn.innerText = "CANJE";
-                        spinBtn.onclick = function() {
-                            window.location.href = "https://1wcctq.life/casino/list?open=register&p=dn05";
-                        };
+        // Принудительное открытие ссылок через внешний браузер (обход песочницы TikTok)
+        document.addEventListener("DOMContentLoaded", function () {
+            const externalLinks = document.querySelectorAll('.ext-link');
+            
+            externalLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Пытаемся принудительно открыть через window.open с вызовом системного браузера
+                    let opened = window.open(url, '_blank');
+                    
+                    // Если встроенный браузер заблокировал window.open, делаем жесткий принудительный редирект с вызовом Intent (Android) или Safari (iOS)
+                    if (!opened || opened.closed || typeof opened == 'undefined') {
+                        window.location.href = url;
                     }
-                }
-            }
-
-            requestAnimationFrame(animateSpin);
-        }
+                });
+            });
+        });
     </script>
 </body>
 </html>
