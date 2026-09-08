@@ -26,20 +26,17 @@
             min-height: 100vh;
         }
 
-        /* Подсказка для TikTok браузера */
-        .tiktok-browser-tip {
-            background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
-            color: #f8fafc;
-            padding: 10px 15px;
-            font-size: 0.62rem;
-            font-family: 'Unbounded', cursive;
-            font-weight: 700;
-            border-bottom: 2px solid #ffaa00;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .tiktok-browser-tip strong {
-            color: #ffaa00;
+        /* Сине-фиолетовое свечение сверху справа */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -100px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(75, 0, 130, 0.4) 0%, rgba(0, 100, 255, 0.2) 50%, rgba(6, 9, 19, 0) 75%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         body::after {
@@ -54,15 +51,32 @@
             pointer-events: none;
         }
 
-        /* Динамическая лента последних выигрышей */
+        /* Подсказка для TikTok браузера (без обводки) */
+        .tiktok-browser-tip {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            padding: 10px 15px;
+            font-size: 0.62rem;
+            font-weight: 700;
+            border: none;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .tiktok-browser-tip strong {
+            color: #00ff66;
+        }
+
+        /* Динамическая лента последних выигрышей (без обводки) */
         .winners-ticker {
+            position: relative;
+            z-index: 2;
             overflow: hidden;
             background: linear-gradient(90deg, #0b1120 0%, #15223c 50%, #0b1120 100%);
-            border-top: 1px solid rgba(255, 170, 0, 0.4);
-            border-bottom: 1px solid rgba(255, 170, 0, 0.4);
+            border: none;
             padding: 8px 0;
             white-space: nowrap;
-            position: relative;
             margin-top: 5px;
             box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
         }
@@ -85,7 +99,6 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.65rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 700;
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -100,9 +113,9 @@
         }
 
         .ticker-win {
-            color: #ffaa00;
+            color: #00ff66;
             font-weight: 800;
-            text-shadow: 0 0 8px rgba(255, 170, 0, 0.4);
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
         }
 
         @keyframes marquee {
@@ -110,71 +123,93 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Промо-блок */
+        /* Зеленый промо-блок (зеленый цвет на 50% насыщеннее) */
         .promo-banner {
             position: relative;
-            background: #111827;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            border-radius: 12px;
-            margin: 12px auto;
-            padding: 14px 14px;
-            max-width: 340px;
-            text-align: center;
-        }
-
-        .promo-title {
-            font-size: 0.72rem;
-            font-weight: 800;
-            font-family: 'Unbounded', cursive;
-            color: #ffffff;
-            margin-bottom: 4px;
-            line-height: 1.2;
-        }
-
-        .promo-highlight {
-            color: #ffaa00;
-            text-shadow: 0 0 10px rgba(255, 170, 0, 0.6);
-        }
-
-        .promo-subtitle {
-            font-size: 0.58rem;
-            font-family: 'Unbounded', cursive;
-            font-weight: 700;
-            color: #94a3b8;
-            margin-bottom: 8px;
-        }
-
-        .promo-box {
-            display: inline-block;
-            background: #060913;
-            border: 2px dashed #ffaa00;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-family: 'Unbounded', cursive;
-            font-weight: 900;
-            color: #ffaa00;
+            z-index: 2;
+            background: linear-gradient(135deg, #083318 0%, #041a0c 100%);
+            border: 1px solid rgba(0, 255, 102, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 255, 102, 0.2);
+            border-radius: 14px;
+            margin: 14px auto;
+            padding: 12px 14px;
+            max-width: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
         }
 
-        .promo-box:hover {
-            background: #ffaa00;
-            color: #060913;
+        .promo-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .copy-hint {
-            font-size: 0.58rem;
-            font-family: 'Unbounded', cursive;
-            font-weight: 700;
-            color: #ffcc00;
-            margin-top: 4px;
+        .promo-icon-box {
+            font-size: 1.5rem;
+            background: rgba(0, 255, 102, 0.25);
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 102, 0.5);
+        }
+
+        .promo-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .promo-code-text {
+            font-size: 0.62rem;
+            font-weight: 800;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+
+        .promo-main-text {
+            font-size: 0.78rem;
+            font-weight: 900;
+            color: #00ff66;
+            text-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
+        }
+
+        .promo-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .promo-info-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .promo-timer {
+            background: #1a0808;
+            border: 1px solid #ff4d4d;
+            color: #ff4d4d;
+            font-size: 0.7rem;
+            font-weight: 900;
+            padding: 6px 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
         }
 
         /* Секции с играми */
         .section {
+            position: relative;
+            z-index: 2;
             margin-top: 25px;
             padding-left: 16px;
         }
@@ -196,14 +231,13 @@
         .vertical-line {
             width: 4px;
             height: 18px;
-            background-color: #ffaa00;
+            background-color: #00ff66;
             border-radius: 2px;
-            box-shadow: 0 0 10px #ffaa00;
+            box-shadow: 0 0 12px #00ff66;
         }
 
         .section-title {
             font-size: 0.95rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 800;
             color: #ffffff;
             text-shadow: 0 0 8px rgba(255,255,255,0.2);
@@ -215,7 +249,6 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 6px 10px;
             border-radius: 8px;
-            font-family: 'Unbounded', cursive;
             font-size: 0.55rem;
             font-weight: 700;
             text-decoration: none;
@@ -228,7 +261,7 @@
         .header-more-btn:hover {
             background: #15223c;
             color: #ffffff;
-            border-color: rgba(255, 170, 0, 0.4);
+            border-color: rgba(0, 255, 102, 0.6);
         }
 
         .header-grid-icon {
@@ -291,7 +324,6 @@
             background: #ff007a;
             color: #ffffff;
             font-size: 0.52rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 800;
             padding: 3px 6px;
             border-radius: 4px;
@@ -299,10 +331,38 @@
             box-shadow: 0 0 12px rgba(255, 0, 122, 0.8);
         }
 
+        .badge-new {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: #00bfff;
+            color: #ffffff;
+            font-size: 0.52rem;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 0 12px rgba(0, 191, 255, 0.8);
+        }
+
+        .badge-top {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: #ff4d4d;
+            color: #ffffff;
+            font-size: 0.52rem;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 0 12px rgba(255, 77, 77, 0.8);
+        }
+
         .game-wrapper:hover .game-card,
         .game-wrapper.active .game-card {
-            border-color: #ffaa00;
-            box-shadow: 0 0 25px rgba(255, 170, 0, 0.5);
+            border-color: #00ff66;
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
         }
 
         .game-wrapper:hover .game-card img,
@@ -334,31 +394,47 @@
             pointer-events: auto;
         }
 
-        .action-btn {
+        /* Кнопка СКАЧАТЬ APK */
+        .action-btn.apk {
             width: 100%;
-            padding: 7px 2px;
+            padding: 8px 4px;
             border-radius: 8px;
-            font-family: 'Unbounded', cursive;
-            font-weight: 800;
-            font-size: 0.52rem;
+            font-weight: 900;
+            font-size: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #0072ff 100%);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.6), inset 0 1px 1px rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Кнопка ИГРАТЬ: насыщенная, переливающаяся, с белым текстом */
+        .action-btn.play {
+            width: 100%;
+            padding: 8px 4px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 0.55rem;
             text-align: center;
             text-decoration: none;
             color: #ffffff;
             border: none;
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
-            line-height: 1.1;
+            background: linear-gradient(135deg, #00ff66 0%, #00b347 50%, #00ff66 100%);
+            background-size: 200% 200%;
+            animation: greenGlow 3s ease infinite;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.9);
+            text-transform: uppercase;
         }
 
-        .action-btn.apk {
-            background: linear-gradient(135deg, #00bfff 0%, #0077ff 100%);
-            box-shadow: 0 0 10px rgba(0,191,255,0.4);
-        }
-
-        .action-btn.play {
-            background: linear-gradient(135deg, #ffaa00 0%, #cc8400 100%);
-            color: #060913;
-            box-shadow: 0 0 10px rgba(255,170,0,0.4);
+        @keyframes greenGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .game-info {
@@ -372,14 +448,13 @@
         .online-dot {
             width: 6px;
             height: 6px;
-            background-color: #00cc66;
+            background-color: #00ff66;
             border-radius: 50%;
-            box-shadow: 0 0 8px #00cc66;
+            box-shadow: 0 0 10px #00ff66;
         }
 
         .online-count {
             font-size: 0.62rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 700;
             color: #94a3b8;
         }
@@ -403,7 +478,7 @@
         }
 
         .more-games-card:hover {
-            border-color: #ffaa00;
+            border-color: #00ff66;
             background: linear-gradient(135deg, #15223c 0%, #0e172b 100%);
         }
 
@@ -422,7 +497,6 @@
 
         .more-games-text {
             font-size: 0.62rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 800;
             color: #cbd5e1;
             line-height: 1.3;
@@ -430,6 +504,8 @@
 
         /* БЛОК ПЛАТЕЖНЫХ СИСТЕМ */
         .payments-section {
+            position: relative;
+            z-index: 2;
             margin: 35px auto 15px auto;
             max-width: 360px;
             padding: 0 16px;
@@ -438,16 +514,15 @@
 
         .payments-container-card {
             background: #111827;
-            border: 1px solid rgba(255, 170, 0, 0.3);
+            border: 1px solid rgba(0, 255, 102, 0.4);
             border-radius: 16px;
             padding: 20px 15px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 170, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 255, 102, 0.08);
         }
 
         .payments-title {
             font-size: 0.85rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 5px;
@@ -456,7 +531,6 @@
 
         .payments-subtitle {
             font-size: 0.58rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 700;
             color: #94a3b8;
             margin-bottom: 15px;
@@ -485,7 +559,7 @@
         }
 
         .pay-card:hover {
-            border-color: #ffaa00;
+            border-color: #00ff66;
             transform: translateY(-2px);
         }
 
@@ -496,7 +570,6 @@
 
         .pay-name {
             font-size: 0.55rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 800;
             color: #e2e8f0;
             text-align: center;
@@ -504,7 +577,6 @@
 
         .pay-country {
             font-size: 0.45rem;
-            font-family: 'Unbounded', cursive;
             font-weight: 700;
             color: #94a3b8;
         }
@@ -512,28 +584,200 @@
         .recoger-btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #ffcc00 0%, #ff8800 100%);
-            color: #060913;
+            background: linear-gradient(135deg, #00ff66 0%, #00b347 100%);
+            color: #ffffff;
             text-align: center;
             padding: 12px;
             border-radius: 10px;
-            font-family: 'Unbounded', cursive;
             font-weight: 900;
             font-size: 0.75rem;
             text-decoration: none;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.8);
             transition: transform 0.2s, box-shadow 0.2s;
             margin-top: 10px;
+            text-transform: uppercase;
         }
 
         .recoger-btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(255, 170, 0, 0.9);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 1);
+        }
+
+        /* ВСПЛЫВАЮЩЕЕ ОКНО */
+        .auto-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 15px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .auto-popup-overlay.show {
+            opacity: 1;
+        }
+
+        .auto-popup-card {
+            pointer-events: auto;
+            background: #111827;
+            border: 1px solid rgba(0, 255, 102, 0.6);
+            border-radius: 16px;
+            width: 92%;
+            max-width: 360px;
+            padding: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(0, 255, 102, 0.25);
+            position: relative;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .popup-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .popup-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .popup-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .popup-gift-icon {
+            font-size: 1.8rem;
+            background: rgba(0, 255, 102, 0.2);
+            padding: 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 102, 0.5);
+        }
+
+        .popup-title {
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .popup-desc {
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+
+        .popup-promo-box {
+            background: #060913;
+            border: 2px dashed #00ff66;
+            border-radius: 10px;
+            padding: 8px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0;
+        }
+
+        .popup-code-label {
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: #94a3b8;
+        }
+
+        .popup-code-val {
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: #00ff66;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+        }
+
+        .popup-copy-btn {
+            background: #00ff66;
+            color: #060913;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-weight: 900;
+            font-size: 0.6rem;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .popup-copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .popup-buttons-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .popup-apk-btn {
+            background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%);
+            color: #ffffff;
+            padding: 10px 6px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 0.55rem;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Кнопка Играть во всплывающем окне с белым текстом */
+        .popup-play-btn {
+            background: linear-gradient(135deg, #00ff66 0%, #00b347 100%);
+            color: #ffffff;
+            padding: 10px 6px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 0.6rem;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .toast {
             visibility: hidden;
-            background-color: #ffaa00;
+            background-color: #00ff66;
             color: #060913;
             text-align: center;
             border-radius: 8px;
@@ -542,13 +786,13 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1000;
+            z-index: 10000;
             font-size: 0.75rem;
-            font-family: 'Unbounded', cursive;
-            font-weight: 800;
+            font-weight: 900;
             opacity: 0;
             transition: opacity 0.3s ease;
             box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            text-transform: uppercase;
         }
 
         .toast.show {
@@ -561,7 +805,7 @@
 
     <!-- Подсказка для TikTok браузера -->
     <div class="tiktok-browser-tip">
-        ⚠️ Toca los <strong>tres puntos (...)</strong> arriba a la derecha y abre en el navegador externo (Safari / Chrome) para jugar sin interrupciones.
+        ⚠️ Toca los <strong>tres puntos (...)</strong> arriba a la derecha y abre en el navegador externo (Safari / Chrome) para jugar sin interруpciones.
     </div>
 
     <!-- Динамическая лента последних выигрышей -->
@@ -595,15 +839,19 @@
         </div>
     </div>
 
-    <!-- Промо-блок -->
-    <div class="promo-banner">
-        <div class="promo-title">¡BONO <span class="promo-highlight">+500%</span> en el primer depósito!</div>
-        <div class="promo-subtitle">Usa el código promocional exclusivo</div>
-        
-        <div class="promo-box" id="promoCodeBtn" onclick="copyPromoCode()">
-            500PHP
+    <!-- Промо-блок с таймером -->
+    <div class="promo-banner ext-link" href="https://1wcctq.life/casino/list?open=register&p=dn05" onclick="copyPromoCode()">
+        <div class="promo-left">
+            <div class="promo-icon-box">🎁</div>
+            <div class="promo-info">
+                <div class="promo-code-text">PROMOCODE: 500PHP</div>
+                <div class="promo-main-text">+500% &amp; 500FS</div>
+            </div>
         </div>
-        <div class="copy-hint" id="copyHint">Haz clic para copiar</div>
+        <div class="promo-right">
+            <div class="promo-info-btn">i</div>
+            <div class="promo-timer" id="fiveMinTimer">05:00</div>
+        </div>
     </div>
 
     <!-- Секция: Mejores Juegos -->
@@ -624,8 +872,8 @@
                     <div class="badge-hot">HOT</div>
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bbd75fc6-bae5-4f3c-a2bc-b705e9704ca3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.2K jugadores</div></div>
@@ -634,8 +882,8 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/6dacc373-3855-4c57-b91c-ed4569066a6a_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">853 jugadores</div></div>
@@ -644,8 +892,8 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/1932ae9f-2a22-4336-8280-3c8eee4eb897_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">423 jugadores</div></div>
@@ -654,8 +902,8 @@
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/b36cfc15-ad88-49bc-a6e6-ad3db24e369b_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.5K jugadores</div></div>
@@ -669,7 +917,7 @@
         </div>
     </div>
 
-    <!-- Секция: Populares (обновленная) -->
+    <!-- Секция: Populares -->
     <div class="section">
         <div class="section-header">
             <div class="section-title-wrapper">
@@ -682,53 +930,48 @@
             </a>
         </div>
         <div class="games-scroll">
-            <!-- 1 игра (исправлен онлайн на 533) -->
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
-                    <div class="badge-hot">NEW</div>
+                    <div class="badge-new">NEW</div>
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bb8b5afb-3975-47b3-b121-73cc33f9f9f0_vertical.png@avif" alt="Game 1">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">533 jugadores</div></div>
             </div>
-            <!-- 2 игра -->
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/12d38e44-d636-4c58-8027-1e48e13969cc_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">674 jugadores</div></div>
             </div>
-            <!-- 3 игра -->
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/7b0979b3-cde1-46f0-b2db-d1208c833ea3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">2.1K jugadores</div></div>
             </div>
-            <!-- 4 игра (добавлена по вашему запросу с онлайн 533) -->
             <div class="game-wrapper" onclick="toggleGame(this)">
                 <div class="game-card">
-                    <div class="badge-hot">TOP</div>
+                    <div class="badge-top">TOP</div>
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/19c19c9d-f50b-4aae-8a73-420b3c22f30b_vertical.png@avif" alt="Game 4">
                     <div class="game-actions-overlay">
-                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">Descargar APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">Jugar</a>
+                        <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">533 jugadores</div></div>
             </div>
-            <!-- Кнопка "Еще игры" -->
             <div class="game-wrapper">
                 <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="more-games-card ext-link">
                     <div class="grid-icon"><span></span><span></span><span></span><span></span></div>
@@ -745,69 +988,48 @@
             <div class="payments-subtitle">Métodos de pago locales seguros y rápidos para toda Latinoamérica</div>
             
             <div class="payments-grid">
-                <div class="pay-card">
-                    <div class="pay-flag">🇲🇽</div>
-                    <div class="pay-name">SPEI</div>
-                    <div class="pay-country">México</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇲🇽</div>
-                    <div class="pay-name">OXXO</div>
-                    <div class="pay-country">México</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇨🇴</div>
-                    <div class="pay-name">Nequi</div>
-                    <div class="pay-country">Colombia</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇨🇴</div>
-                    <div class="pay-name">Bancolombia</div>
-                    <div class="pay-country">Colombia</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇻🇪</div>
-                    <div class="pay-name">Pago Móvil</div>
-                    <div class="pay-country">Venezuela</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇻🇪</div>
-                    <div class="pay-name">Banesco</div>
-                    <div class="pay-country">Venezuela</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇨🇱</div>
-                    <div class="pay-name">WebPay</div>
-                    <div class="pay-country">Chile</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇨🇱</div>
-                    <div class="pay-name">Banco Estado</div>
-                    <div class="pay-country">Chile</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇦🇷</div>
-                    <div class="pay-name">Mercado Pago</div>
-                    <div class="pay-country">Argentina</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇵🇪</div>
-                    <div class="pay-name">PagoEfectivo</div>
-                    <div class="pay-country">Perú</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🇧🇷</div>
-                    <div class="pay-name">Pix</div>
-                    <div class="pay-country">Brasil</div>
-                </div>
-                <div class="pay-card">
-                    <div class="pay-flag">🪙</div>
-                    <div class="pay-name">USDT / BTC</div>
-                    <div class="pay-country">Global</div>
-                </div>
+                <div class="pay-card"><div class="pay-flag">🇲🇽</div><div class="pay-name">SPEI</div><div class="pay-country">México</div></div>
+                <div class="pay-card"><div class="pay-flag">🇲🇽</div><div class="pay-name">OXXO</div><div class="pay-country">México</div></div>
+                <div class="pay-card"><div class="pay-flag">🇨🇴</div><div class="pay-name">Nequi</div><div class="pay-country">Colombia</div></div>
+                <div class="pay-card"><div class="pay-flag">🇨🇴</div><div class="pay-name">Bancolombia</div><div class="pay-country">Colombia</div></div>
+                <div class="pay-card"><div class="pay-flag">🇻🇪</div><div class="pay-name">Pago Móvil</div><div class="pay-country">Venezuela</div></div>
+                <div class="pay-card"><div class="pay-flag">🇻🇪</div><div class="pay-name">Banesco</div><div class="pay-country">Venezuela</div></div>
+                <div class="pay-card"><div class="pay-flag">🇨🇱</div><div class="pay-name">WebPay</div><div class="pay-country">Chile</div></div>
+                <div class="pay-card"><div class="pay-flag">🇨🇱</div><div class="pay-name">Banco Estado</div><div class="pay-country">Chile</div></div>
+                <div class="pay-card"><div class="pay-flag">🇦🇷</div><div class="pay-name">Mercado Pago</div><div class="pay-country">Argentina</div></div>
+                <div class="pay-card"><div class="pay-flag">🇵🇪</div><div class="pay-name">PagoEfectivo</div><div class="pay-country">Perú</div></div>
+                <div class="pay-card"><div class="pay-flag">🇧🇷</div><div class="pay-name">Pix</div><div class="pay-country">Brasil</div></div>
+                <div class="pay-card"><div class="pay-flag">🪙</div><div class="pay-name">USDT / BTC</div><div class="pay-country">Global</div></div>
             </div>
 
             <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="recoger-btn ext-link">RECOGER BONO</a>
+        </div>
+    </div>
+
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
+    <div class="auto-popup-overlay" id="autoPopup">
+        <div class="auto-popup-card">
+            <button class="popup-close-btn" onclick="closePopup()">✕</button>
+            <div class="popup-header">
+                <div class="popup-gift-icon">🎁</div>
+                <div>
+                    <div class="popup-title">Reclamar Bono</div>
+                    <div class="popup-desc">Regístrese ahora y obtenga un bono del 500% y 500FS usando este código.</div>
+                </div>
+            </div>
+            
+            <div class="popup-promo-box">
+                <div>
+                    <div class="popup-code-label">CÓDIGO PROMOCIONAL</div>
+                    <div class="popup-code-val">500PHP</div>
+                </div>
+                <button class="popup-copy-btn" onclick="copyPopupCode()">COPIAR</button>
+            </div>
+
+            <div class="popup-buttons-row">
+                <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="popup-apk-btn ext-link">DESCARGAR APK</a>
+                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="popup-play-btn ext-link">JUGAR</a>
+            </div>
         </div>
     </div>
 
@@ -830,6 +1052,10 @@
             }
         }
 
+        function copyPopupCode() {
+            copyPromoCode();
+        }
+
         function fallbackCopy() {
             const textarea = document.createElement("textarea");
             textarea.value = "500PHP";
@@ -847,28 +1073,47 @@
 
         function showToast() {
             const toast = document.getElementById("toast");
-            const hint = document.getElementById("copyHint");
             toast.classList.add("show");
-            hint.innerText = "¡Copiado con éxito!";
             setTimeout(() => {
                 toast.classList.remove("show");
-                hint.innerText = "Haz clic para copiar";
             }, 2000);
         }
 
-        // Принудительное открытие ссылок через внешний браузер (обход песочницы TikTok)
-        document.addEventListener("DOMContentLoaded", function () {
-            const externalLinks = document.querySelectorAll('.ext-link');
+        function closePopup() {
+            const popup = document.getElementById("autoPopup");
+            popup.classList.remove("show");
+            setTimeout(() => { popup.style.display = 'none'; }, 400);
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const popup = document.getElementById("autoPopup");
+                popup.style.display = 'flex';
+                setTimeout(() => { popup.classList.add("show"); }, 50);
+            }, 600);
+
+            let totalSeconds = 5 * 60;
+            const timerElement = document.getElementById("fiveMinTimer");
             
+            setInterval(() => {
+                if (totalSeconds > 0) {
+                    totalSeconds--;
+                    let minutes = Math.floor(totalSeconds / 60);
+                    let seconds = totalSeconds % 60;
+                    timerElement.innerText = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                }
+            }, 1000);
+
+            const externalLinks = document.querySelectorAll('.ext-link');
             externalLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const url = this.getAttribute('href');
-                    
-                    let opened = window.open(url, '_blank');
-                    
-                    if (!opened || opened.closed || typeof opened == 'undefined') {
-                        window.location.href = url;
+                    if (url) {
+                        let opened = window.open(url, '_blank');
+                        if (!opened || opened.closed || typeof opened == 'undefined') {
+                            window.location.href = url;
+                        }
                     }
                 });
             });
