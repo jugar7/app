@@ -6,7 +6,7 @@
     <title>1Win Latam Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -51,7 +51,7 @@
             pointer-events: none;
         }
 
-        /* Подсказка для TikTok браузера (без обводки) */
+        /* Подсказка для TikTok браузера */
         .tiktok-browser-tip {
             position: relative;
             z-index: 2;
@@ -59,7 +59,7 @@
             color: #f8fafc;
             padding: 10px 15px;
             font-size: 0.62rem;
-            font-weight: 700;
+            font-weight: 600;
             border: none;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -68,7 +68,7 @@
             color: #00ff66;
         }
 
-        /* Динамическая лента последних выигрышей (без обводки) */
+        /* Динамическая лента последних выигрышей */
         .winners-ticker {
             position: relative;
             z-index: 2;
@@ -99,9 +99,9 @@
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.65rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             text-decoration: none;
         }
 
@@ -114,7 +114,7 @@
 
         .ticker-win {
             color: #00ff66;
-            font-weight: 800;
+            font-weight: 700;
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
         }
 
@@ -123,13 +123,13 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* Зеленый промо-блок (зеленый цвет на 50% насыщеннее) */
+        /* Промо-блок (смягченные обводки и новый текст) */
         .promo-banner {
             position: relative;
             z-index: 2;
-            background: linear-gradient(135deg, #083318 0%, #041a0c 100%);
-            border: 1px solid rgba(0, 255, 102, 0.6);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 255, 102, 0.2);
+            background: linear-gradient(135deg, #0d1424 0%, #080d1a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
             border-radius: 14px;
             margin: 14px auto;
             padding: 12px 14px;
@@ -149,10 +149,10 @@
 
         .promo-icon-box {
             font-size: 1.5rem;
-            background: rgba(0, 255, 102, 0.25);
+            background: rgba(255, 255, 255, 0.04);
             padding: 6px;
             border-radius: 10px;
-            border: 1px solid rgba(0, 255, 102, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .promo-info {
@@ -163,14 +163,14 @@
 
         .promo-code-text {
             font-size: 0.62rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #94a3b8;
             letter-spacing: 0.5px;
         }
 
         .promo-main-text {
             font-size: 0.78rem;
-            font-weight: 900;
+            font-weight: 800;
             color: #00ff66;
             text-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
         }
@@ -182,7 +182,7 @@
         }
 
         .promo-info-btn {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
             color: #ffffff;
             width: 24px;
             height: 24px;
@@ -191,19 +191,19 @@
             align-items: center;
             justify-content: center;
             font-size: 0.7rem;
-            font-weight: 800;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .promo-timer {
             background: #1a0808;
-            border: 1px solid #ff4d4d;
+            border: 1px solid rgba(255, 77, 77, 0.5);
             color: #ff4d4d;
             font-size: 0.7rem;
-            font-weight: 900;
+            font-weight: 800;
             padding: 6px 10px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+            box-shadow: 0 0 10px rgba(255, 77, 77, 0.2);
         }
 
         /* Секции с играми */
@@ -233,12 +233,12 @@
             height: 18px;
             background-color: #00ff66;
             border-radius: 2px;
-            box-shadow: 0 0 12px #00ff66;
+            box-shadow: 0 0 10px #00ff66;
         }
 
         .section-title {
             font-size: 0.95rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 8px rgba(255,255,255,0.2);
         }
@@ -246,11 +246,11 @@
         .header-more-btn {
             background: #0e172b;
             color: #94a3b8;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             padding: 6px 10px;
             border-radius: 8px;
             font-size: 0.55rem;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -261,7 +261,7 @@
         .header-more-btn:hover {
             background: #15223c;
             color: #ffffff;
-            border-color: rgba(0, 255, 102, 0.6);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .header-grid-icon {
@@ -302,7 +302,7 @@
             background: #0d1424;
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             position: relative;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -324,11 +324,11 @@
             background: #ff007a;
             color: #ffffff;
             font-size: 0.52rem;
-            font-weight: 800;
+            font-weight: 700;
             padding: 3px 6px;
             border-radius: 4px;
             z-index: 2;
-            box-shadow: 0 0 12px rgba(255, 0, 122, 0.8);
+            box-shadow: 0 0 10px rgba(255, 0, 122, 0.6);
         }
 
         .badge-new {
@@ -338,11 +338,11 @@
             background: #00bfff;
             color: #ffffff;
             font-size: 0.52rem;
-            font-weight: 800;
+            font-weight: 700;
             padding: 3px 6px;
             border-radius: 4px;
             z-index: 2;
-            box-shadow: 0 0 12px rgba(0, 191, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
         }
 
         .badge-top {
@@ -352,17 +352,17 @@
             background: #ff4d4d;
             color: #ffffff;
             font-size: 0.52rem;
-            font-weight: 800;
+            font-weight: 700;
             padding: 3px 6px;
             border-radius: 4px;
             z-index: 2;
-            box-shadow: 0 0 12px rgba(255, 77, 77, 0.8);
+            box-shadow: 0 0 10px rgba(255, 77, 77, 0.6);
         }
 
         .game-wrapper:hover .game-card,
         .game-wrapper.active .game-card {
-            border-color: #00ff66;
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         .game-wrapper:hover .game-card img,
@@ -394,30 +394,61 @@
             pointer-events: auto;
         }
 
-        /* Кнопка СКАЧАТЬ APK */
+        /* Кнопка СКАЧАТЬ APK: более яркая с улучшенным сиянием */
         .action-btn.apk {
             width: 100%;
             padding: 8px 4px;
             border-radius: 8px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.5rem;
             text-align: center;
             text-decoration: none;
             color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.3);
             cursor: pointer;
-            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #0072ff 100%);
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.6), inset 0 1px 1px rgba(255,255,255,0.6);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #00f2fe 0%, #0c61ff 50%, #00f2fe 100%);
+            background-size: 200% 200%;
+            animation: apkShine 2.5s ease infinite;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.9), inset 0 1px 2px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Кнопка ИГРАТЬ: насыщенная, переливающаяся, с белым текстом */
+        .action-btn.apk::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.6) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg) translateX(-100%);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes apkShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shimmer {
+            100% { transform: rotate(30deg) translateX(100%); }
+        }
+
+        /* Кнопка REGISTRARSE (бывшая PLAY) */
         .action-btn.play {
             width: 100%;
             padding: 8px 4px;
             border-radius: 8px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.55rem;
             text-align: center;
             text-decoration: none;
@@ -427,7 +458,7 @@
             background: linear-gradient(135deg, #00ff66 0%, #00b347 50%, #00ff66 100%);
             background-size: 200% 200%;
             animation: greenGlow 3s ease infinite;
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.9);
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.8);
             text-transform: uppercase;
         }
 
@@ -450,12 +481,12 @@
             height: 6px;
             background-color: #00ff66;
             border-radius: 50%;
-            box-shadow: 0 0 10px #00ff66;
+            box-shadow: 0 0 8px #00ff66;
         }
 
         .online-count {
             font-size: 0.62rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #94a3b8;
         }
 
@@ -464,7 +495,7 @@
             aspect-ratio: 3 / 4;
             background: linear-gradient(135deg, #0e172b 0%, #090e1a 100%);
             border-radius: 14px;
-            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -478,7 +509,7 @@
         }
 
         .more-games-card:hover {
-            border-color: #00ff66;
+            border-color: rgba(255, 255, 255, 0.3);
             background: linear-gradient(135deg, #15223c 0%, #0e172b 100%);
         }
 
@@ -497,7 +528,7 @@
 
         .more-games-text {
             font-size: 0.62rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #cbd5e1;
             line-height: 1.3;
         }
@@ -514,24 +545,24 @@
 
         .payments-container-card {
             background: #111827;
-            border: 1px solid rgba(0, 255, 102, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 16px;
             padding: 20px 15px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 255, 102, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
 
         .payments-title {
             font-size: 0.85rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #ffffff;
             margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
 
         .payments-subtitle {
             font-size: 0.58rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #94a3b8;
             margin-bottom: 15px;
             line-height: 1.4;
@@ -546,7 +577,7 @@
 
         .pay-card {
             background: #060913;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             padding: 8px 4px;
             display: flex;
@@ -559,7 +590,7 @@
         }
 
         .pay-card:hover {
-            border-color: #00ff66;
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
@@ -570,14 +601,14 @@
 
         .pay-name {
             font-size: 0.55rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #e2e8f0;
             text-align: center;
         }
 
         .pay-country {
             font-size: 0.45rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #94a3b8;
         }
 
@@ -589,7 +620,7 @@
             text-align: center;
             padding: 12px;
             border-radius: 10px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.75rem;
             text-decoration: none;
             box-shadow: 0 0 25px rgba(0, 255, 102, 0.8);
@@ -627,12 +658,12 @@
         .auto-popup-card {
             pointer-events: auto;
             background: #111827;
-            border: 1px solid rgba(0, 255, 102, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 16px;
             width: 92%;
             max-width: 360px;
             padding: 16px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 25px rgba(0, 255, 102, 0.25);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
             position: relative;
             animation: slideDown 0.4s ease;
         }
@@ -646,14 +677,14 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             color: #ffffff;
             border: none;
             width: 28px;
             height: 28px;
             border-radius: 50%;
             font-size: 0.8rem;
-            font-weight: 800;
+            font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -662,7 +693,7 @@
         }
 
         .popup-close-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .popup-header {
@@ -674,29 +705,29 @@
 
         .popup-gift-icon {
             font-size: 1.8rem;
-            background: rgba(0, 255, 102, 0.2);
+            background: rgba(255, 255, 255, 0.04);
             padding: 8px;
             border-radius: 12px;
-            border: 1px solid rgba(0, 255, 102, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .popup-title {
             font-size: 0.85rem;
-            font-weight: 900;
+            font-weight: 800;
             color: #ffffff;
             margin-bottom: 3px;
         }
 
         .popup-desc {
             font-size: 0.55rem;
-            font-weight: 700;
+            font-weight: 600;
             color: #94a3b8;
             line-height: 1.3;
         }
 
         .popup-promo-box {
             background: #060913;
-            border: 2px dashed #00ff66;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 8px 12px;
             display: flex;
@@ -707,13 +738,13 @@
 
         .popup-code-label {
             font-size: 0.6rem;
-            font-weight: 800;
+            font-weight: 700;
             color: #94a3b8;
         }
 
         .popup-code-val {
             font-size: 0.85rem;
-            font-weight: 900;
+            font-weight: 800;
             color: #00ff66;
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
         }
@@ -724,7 +755,7 @@
             border: none;
             padding: 5px 12px;
             border-radius: 6px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.6rem;
             cursor: pointer;
             transition: transform 0.1s;
@@ -742,29 +773,31 @@
         }
 
         .popup-apk-btn {
-            background: linear-gradient(135deg, #00d2ff 0%, #0072ff 100%);
+            background: linear-gradient(135deg, #00f2fe 0%, #0c61ff 100%);
             color: #ffffff;
             padding: 10px 6px;
             border-radius: 8px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.55rem;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.4);
+            position: relative;
+            overflow: hidden;
+            animation: apkShine 2.5s ease infinite;
         }
 
-        /* Кнопка Играть во всплывающем окне с белым текстом */
         .popup-play-btn {
             background: linear-gradient(135deg, #00ff66 0%, #00b347 100%);
             color: #ffffff;
             padding: 10px 6px;
             border-radius: 8px;
-            font-weight: 900;
+            font-weight: 800;
             font-size: 0.6rem;
             text-align: center;
             text-decoration: none;
@@ -788,7 +821,7 @@
             transform: translateX(-50%);
             z-index: 10000;
             font-size: 0.75rem;
-            font-weight: 900;
+            font-weight: 800;
             opacity: 0;
             transition: opacity 0.3s ease;
             box-shadow: 0 5px 25px rgba(0,0,0,0.6);
@@ -805,7 +838,7 @@
 
     <!-- Подсказка для TikTok браузера -->
     <div class="tiktok-browser-tip">
-        ⚠️ Toca los <strong>tres puntos (...)</strong> arriba a la derecha y abre en el navegador externo (Safari / Chrome) para jugar sin interруpciones.
+        ⚠️ Toca los <strong>tres puntos (...)</strong> arriba a la derecha y abre en el navegador externo (Safari / Chrome) para jugar sin interrupciones.
     </div>
 
     <!-- Динамическая лента последних выигрышей -->
@@ -839,13 +872,13 @@
         </div>
     </div>
 
-    <!-- Промо-блок с таймером -->
+    <!-- Промо-блок с обновленным текстом бонуса -->
     <div class="promo-banner ext-link" href="https://1wcctq.life/casino/list?open=register&p=dn05" onclick="copyPromoCode()">
         <div class="promo-left">
             <div class="promo-icon-box">🎁</div>
             <div class="promo-info">
                 <div class="promo-code-text">PROMOCODE: 500PHP</div>
-                <div class="promo-main-text">+500% &amp; 500FS</div>
+                <div class="promo-main-text">BONO +500% &amp; 500FS</div>
             </div>
         </div>
         <div class="promo-right">
@@ -873,7 +906,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bbd75fc6-bae5-4f3c-a2bc-b705e9704ca3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.2K jugadores</div></div>
@@ -883,7 +916,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/6dacc373-3855-4c57-b91c-ed4569066a6a_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">853 jugadores</div></div>
@@ -893,7 +926,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/1932ae9f-2a22-4336-8280-3c8eee4eb897_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">423 jugadores</div></div>
@@ -903,7 +936,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/b36cfc15-ad88-49bc-a6e6-ad3db24e369b_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">1.5K jugadores</div></div>
@@ -936,7 +969,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/bb8b5afb-3975-47b3-b121-73cc33f9f9f0_vertical.png@avif" alt="Game 1">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">533 jugadores</div></div>
@@ -946,7 +979,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/12d38e44-d636-4c58-8027-1e48e13969cc_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">674 jugadores</div></div>
@@ -956,7 +989,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/7b0979b3-cde1-46f0-b2db-d1208c833ea3_vertical.png@avif" alt="Game">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">2.1K jugadores</div></div>
@@ -967,7 +1000,7 @@
                     <img src="https://1wvmqy.com/resources/v1/optimizeimages/unsafe/casino_game_card_x1/plain/https://v1.bundlecdn.com/casino-images/v/19c19c9d-f50b-4aae-8a73-420b3c22f30b_vertical.png@avif" alt="Game 4">
                     <div class="game-actions-overlay">
                         <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="action-btn apk ext-link" onclick="event.stopPropagation()">DESCARGAR APK 5.2 MB</a>
-                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">JUGAR</a>
+                        <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="action-btn play ext-link" onclick="event.stopPropagation()">REGISTRARSE</a>
                     </div>
                 </div>
                 <div class="game-info"><div class="online-dot"></div><div class="online-count">533 jugadores</div></div>
@@ -1028,7 +1061,7 @@
 
             <div class="popup-buttons-row">
                 <a href="https://1wcctq.life/application-cordova/v1/apk/com-mobile-one-win/1win.apk?p=dn05" class="popup-apk-btn ext-link">DESCARGAR APK</a>
-                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="popup-play-btn ext-link">JUGAR</a>
+                <a href="https://1wcctq.life/casino/list?open=register&p=dn05" class="popup-play-btn ext-link">REGISTRARSE</a>
             </div>
         </div>
     </div>
