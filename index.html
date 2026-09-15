@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mejores juegos</title>
+    <title>Gaming Latam Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9X9RMG3G3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N9X9RMG3G3');
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -1050,7 +1060,7 @@
                 <div class="pay-card"><div class="pay-flag">🇦🇷</div><div class="pay-name">Mercado Pago</div><div class="pay-country">Argentina</div></div>
                 <div class="pay-card"><div class="pay-flag">🇦🇷</div><div class="pay-name">Transferencia</div><div class="pay-country">Argentina</div></div>
                 <div class="pay-card"><div class="pay-flag">🇲🇽</div><div class="pay-name">SPEI / OXXO</div><div class="pay-country">México</div></div>
-                <div class="pay-card"><div class="pay-card"><div class="pay-flag">🇨🇴</div><div class="pay-name">Nequi / PSE</div><div class="pay-country">Colombia</div></div></div>
+                <div class="pay-card"><div class="pay-flag">🇨🇴</div><div class="pay-name">Nequi / PSE</div><div class="pay-country">Colombia</div></div>
                 <div class="pay-card"><div class="pay-flag">🇵🇪</div><div class="pay-name">Yape / Plin</div><div class="pay-country">Perú</div></div>
                 <div class="pay-card"><div class="pay-flag">🪙</div><div class="pay-name">USDT / BTC</div><div class="pay-country">Global</div></div>
             </div>
@@ -1105,6 +1115,9 @@
 
         function openBonusPopup() {
             document.getElementById("autoPopup").classList.add("show");
+            if (typeof gtag === 'function') {
+                gtag('event', 'bonus_banner_click', { 'banner_name': 'Promo Banner Top' });
+            }
         }
 
         function closePopup() {
@@ -1116,11 +1129,15 @@
             const faqTitle = document.getElementById("faqTitle");
             const faqBody = document.getElementById("faqBody");
 
+            let questionText = "";
+
             if (id === 1) {
-                faqTitle.innerText = "¿Es segura esta aplicación?";
+                questionText = "¿Es segura esta aplicación?";
+                faqTitle.innerText = questionText;
                 faqBody.innerHTML = "Sí, es 100% segura. La aplicación oficial ha sido desarrollada por la empresa 1win utilizando protocolos de encriptación de alta seguridad para proteger tus datos y transacciones.";
             } else if (id === 2) {
-                faqTitle.innerText = "¿Cómo obtener el bono?";
+                questionText = "¿Cómo obtener el bono?";
+                faqTitle.innerText = questionText;
                 faqBody.innerHTML = `Para recibir el bono es necesario registrarse e ingresar el código promocional <b>500PHP</b> durante el registro. Esto te otorgará un +500% en tu primer depósito y 50 giros gratis.<br><br>
                 <div class="popup-promo-box" style="margin-bottom:0;">
                     <div>
@@ -1130,8 +1147,16 @@
                     <button class="popup-copy-btn" onclick="copyPromoCode()">COPIAR</button>
                 </div>`;
             } else if (id === 3) {
-                faqTitle.innerText = "¿Puedo retirar mis ganancias rápido?";
+                questionText = "¿Puedo retirar mis ganancias rápido?";
+                faqTitle.innerText = questionText;
                 faqBody.innerHTML = "¡Por supuesto! El retiro de fondos es instantáneo. Aceptamos todos los sistemas de pago locales (WebPay, Banco Estado, Mercado Pago, SPEI, Nequi, Yape, etc.) y criptomonedas sin comisiones.";
+            }
+
+            // Трекинг клика по FAQ
+            if (typeof gtag === 'function') {
+                gtag('event', 'faq_click', {
+                    'question_title': questionText
+                });
             }
 
             document.getElementById("faqModal").classList.add("show");
@@ -1149,6 +1174,12 @@
 
         function copyPromoCode() {
             const code = "500PHP";
+
+            // Трекинг копирования промокода
+            if (typeof gtag === 'function') {
+                gtag('event', 'promo_copied', { 'promocode': code });
+            }
+
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(code).then(showToast).catch(fallbackCopy);
             } else {
@@ -1196,11 +1227,22 @@
                 }
             }, 1000);
 
+            // Автоматическое отслеживание всех внешних кнопок/ссылок
             const externalLinks = document.querySelectorAll('.ext-link');
             externalLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const url = this.getAttribute('href');
+                    const buttonText = this.innerText.trim() || 'Без текста';
+
+                    // Отправка события в GA4
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'cta_button_click', {
+                            'button_name': buttonText,
+                            'target_url': url
+                        });
+                    }
+
                     if (url) {
                         let opened = window.open(url, '_blank');
                         if (!opened || opened.closed || typeof opened == 'undefined') {
